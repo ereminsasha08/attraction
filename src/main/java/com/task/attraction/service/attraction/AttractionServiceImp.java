@@ -8,7 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Stream;
 
 @Slf4j
 @Service
@@ -18,7 +21,16 @@ public class AttractionServiceImp implements AttractionService {
 
     private final AttractionRepository attractionRepository;
 
-    public List<Attraction> getAll(){
-        return attractionRepository.findAll();
+
+    @Override
+    public List<Attraction> getAttraction(String typeFilter, Boolean nameSorted) {
+        Stream<Attraction> stream = attractionRepository.findAll().stream();
+        if (!Objects.isNull(typeFilter)) {
+            stream = stream.filter(attraction -> typeFilter.equalsIgnoreCase(attraction.getType().name()));
+        }
+        if (!Objects.isNull(nameSorted) && nameSorted)
+            stream = stream.sorted(Comparator.comparing(Attraction::getName));
+        return stream.toList();
     }
+
 }

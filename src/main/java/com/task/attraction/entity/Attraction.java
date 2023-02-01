@@ -1,6 +1,5 @@
 package com.task.attraction.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -51,7 +50,6 @@ public class Attraction implements Persistable<Integer> {
 
     @ManyToOne
     @JoinColumn(name = "city_id")
-    @JsonIgnoreProperties(value = "attraction")
     private City city;
 
     @Override
