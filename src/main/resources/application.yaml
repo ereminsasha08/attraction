@@ -12,7 +12,6 @@ spring:
     username: user
     password: password
   liquibase:
-    change-log: classpath:liquibase/changelog.yml
     enabled: false
   jackson.visibility:
     field: any
