@@ -33,4 +33,12 @@ public class AttractionServiceImp implements AttractionService {
         return stream.toList();
     }
 
+    @Override
+    public List<Attraction> getAttractionByCityName(String name) {
+        return attractionRepository.findAll()
+                .parallelStream()
+                .filter(attraction -> name.equalsIgnoreCase(attraction.getCity().getName()))
+                .toList();
+    }
+
 }

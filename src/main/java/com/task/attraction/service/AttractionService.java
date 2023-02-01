@@ -7,4 +7,6 @@ import java.util.List;
 public interface AttractionService {
 
     List<Attraction> getAttraction(String typeFilter, Boolean nameSorted);
+
+    List<Attraction> getAttractionByCityName(String name);
 }

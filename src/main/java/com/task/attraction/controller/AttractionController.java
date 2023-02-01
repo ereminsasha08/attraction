@@ -4,10 +4,7 @@ import com.task.attraction.entity.Attraction;
 import com.task.attraction.service.AttractionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.lang.Nullable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +20,11 @@ public class AttractionController {
     public List<Attraction> findAttraction(@Nullable @RequestParam String typeFilter,
                                            @Nullable @RequestParam Boolean nameSorted){
         return attractionService.getAttraction(typeFilter, nameSorted);
+    }
+
+    @GetMapping("city/{name}")
+    public List<Attraction> findByCityName(@PathVariable String name)   {
+        return attractionService.getAttractionByCityName(name);
     }
 
 
