@@ -39,7 +39,7 @@ public class AttractionServiceImp implements AttractionService {
             stream = stream.filter(attraction -> typeFilter.equalsIgnoreCase(attraction.getType().name()));
         }
         if (!Objects.isNull(nameSorted) && nameSorted)
-            stream = stream.sorted(Comparator.comparing(Attraction::getName));
+            stream = stream.sorted(Comparator.comparing(Attraction::getName).reversed());
         return stream.toList();
     }
 

@@ -1,0 +1,89 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-row
+      author: alex
+      changes:
+        - insert:
+            tableName: attraction
+            columns:
+              - column:
+                  name: id
+                  autoIncrement: true
+              - column:
+                  name: date_construction
+                  valueDate: 1987-07-26
+              - column:
+                  name: name
+                  value: 'Мост влюбленных'
+              - column:
+                  name: description
+                  value: 'Вантовый пешеходный мост через реку Тура в Центральном округе города Тюмени.'
+              - column:
+                  name: type
+                  valueNumeric: 1
+              - column:
+                  name: city_id
+                  valueNumeric: 2
+        - insert:
+            tableName: attraction
+            columns:
+              - column:
+                  name: id
+                  autoIncrement: true
+              - column:
+                  name: date_construction
+                  valueDate: 1495-01-01
+              - column:
+                  name: name
+                  value: 'Кремль'
+              - column:
+                  name: description
+                  value: 'Крепость в центре Москвы и древнейшая её часть, главный общественно-политический и историко-художественный комплекс города'
+              - column:
+                  name: type
+                  valueNumeric: 0
+              - column:
+                  name: city_id
+                  valueNumeric: 1
+        - insert:
+            tableName: attraction
+            columns:
+              - column:
+                  name: id
+                  autoIncrement: true
+              - column:
+                  name: date_construction
+                  valueDate: 2015-11-25
+              - column:
+                  name: name
+                  value: 'Президентский центр Бориса Ельцина'
+              - column:
+                  name: description
+                  value: 'Президентский центр Б. Н. Ельцина, или Ельцин Центр, — общественный, культурный и образовательный центр, открытый в Екатеринбурге'
+              - column:
+                  name: type
+                  valueNumeric: 2
+              - column:
+                  name: city_id
+                  valueNumeric: 4
+        - insert:
+            tableName: attraction
+            columns:
+              - column:
+                  name: id
+                  autoIncrement: true
+              - column:
+                  name: date_construction
+                  valueDate: 2005-10-05
+              - column:
+                  name: name
+                  value: 'Памятник счастью'
+              - column:
+                  name: description
+                  value: 'Бронзовый памятник волку из мультфильма «Жил-был пёс»'
+              - column:
+                  name: type
+                  valueNumeric: 3
+              - column:
+                  name: city_id
+                  valueNumeric: 3

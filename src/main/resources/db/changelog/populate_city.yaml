@@ -1,0 +1,77 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-row
+      author: alex
+      changes:
+        - insert:
+            tableName: city
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: population
+                  valueNumeric: 12000000
+              - column:
+                  name: name
+                  value: "Москва"
+              - column:
+                  name: country
+                  value: "Россия"
+              - column:
+                  name: underground
+                  valueBoolean: t
+        - insert:
+            tableName: city
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 2
+              - column:
+                  name: population
+                  valueNumeric: 800000
+              - column:
+                  name: name
+                  value: "Тюмень"
+              - column:
+                  name: country
+                  value: "Россия"
+              - column:
+                  name: underground
+                  valueBoolean: f
+        - insert:
+            tableName: city
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 3
+              - column:
+                  name: population
+                  valueNumeric: 600000
+              - column:
+                  name: name
+                  value: "Томск"
+              - column:
+                  name: country
+                  value: "Россия"
+              - column:
+                  name: underground
+                  valueBoolean: f
+        - insert:
+            tableName: city
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 4
+              - column:
+                  name: population
+                  valueNumeric: 1600000
+              - column:
+                  name: name
+                  value: "Екатеринбург"
+              - column:
+                  name: country
+                  value: "Россия"
+              - column:
+                  name: underground
+                  valueBoolean: t
