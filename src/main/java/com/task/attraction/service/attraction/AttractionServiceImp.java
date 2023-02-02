@@ -1,6 +1,5 @@
 package com.task.attraction.service.attraction;
 
-import com.task.attraction.dto.AttractionDTO;
 import com.task.attraction.entity.Attraction;
 import com.task.attraction.entity.City;
 import com.task.attraction.repository.AttractionRepository;
@@ -8,7 +7,6 @@ import com.task.attraction.service.AttractionService;
 import com.task.attraction.service.CityService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,8 +27,6 @@ public class AttractionServiceImp implements AttractionService {
 
     private final CityService cityService;
 
-    private final ModelMapper mapper;
-
 
     @Override
     public List<Attraction> getAttraction(String typeFilter, Boolean nameSorted) {
@@ -45,19 +41,19 @@ public class AttractionServiceImp implements AttractionService {
 
     @Override
     public List<Attraction> getAttractionByCityName(String name) {
+        City cityByName = cityService.findByName(name);
         return attractionRepository.findAll()
                 .parallelStream()
-                .filter(attraction -> name.equalsIgnoreCase(attraction.getCity().getName()))
+                .filter(attraction -> attraction.getCityId().equals(cityByName.getId()))
                 .toList();
     }
 
     @Override
     @Transactional
-    public Attraction create(AttractionDTO attractionDTO) {
-        Integer cityId = attractionDTO.getCity_id();
+    public Attraction create(Attraction attraction) {
+        Integer cityId = attraction.getCityId();
         City city = cityService.findById(cityId);
-        Attraction attraction = mapper.map(attractionDTO, Attraction.class);
-        attraction.setCity(city);
+        attraction.setCityId(city.getId());
         return attractionRepository.save(attraction);
     }
 

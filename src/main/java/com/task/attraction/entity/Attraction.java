@@ -47,9 +47,8 @@ public class Attraction implements Persistable<Integer> {
     @Fetch(FetchMode.JOIN)
     private Type type;
 
-    @ManyToOne
-    @JoinColumn(name = "city_id", nullable = false)
-    private City city;
+    @Column(name = "city_id", nullable = false)
+    private Integer cityId;
 
     @Override
     public Integer getId() {

@@ -14,7 +14,7 @@
     description: "Описание",
     dateConstruction: "Дата основания YYYY-MM-dd",
     type: "Тип (порядковый номер в Enum Type)",
-    city_id: "Id города из списка доступных городов"
+    cityId: "Id города из списка доступных городов"
  }
  ```
 - PATCH /attraction/update/{id} - обновления описания достопреиечательности обязательный параметр description

@@ -8,7 +8,9 @@ import java.util.Optional;
 public interface CityRepository {
     City save(City city);
 
-   Optional<City> findById(Integer cityId);
+    Optional<City> findById(Integer cityId);
 
     List<City> findAll();
+
+    Optional<City> findByNameIgnoringCase(String name);
 }

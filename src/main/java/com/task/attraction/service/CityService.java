@@ -12,4 +12,4 @@ public interface CityService {
     City update(Integer id, Integer population, Boolean underground);
 
     City findById(Integer cityId);
-}
+City findByName(String name);}

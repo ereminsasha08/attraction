@@ -1,6 +1,5 @@
 package com.task.attraction.controller;
 
-import com.task.attraction.dto.AttractionDTO;
 import com.task.attraction.entity.Attraction;
 import com.task.attraction.service.AttractionService;
 import lombok.RequiredArgsConstructor;
@@ -30,8 +29,8 @@ public class AttractionController {
     }
 
     @PostMapping
-    public Attraction add(@Valid @RequestBody AttractionDTO attractionDTO) {
-        return attractionService.create(attractionDTO);
+    public Attraction add(@Valid @RequestBody Attraction attraction) {
+        return attractionService.create(attraction);
     }
 
     @PatchMapping("update/{id}")
