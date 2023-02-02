@@ -24,7 +24,6 @@ public class Attraction implements Persistable<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Integer id;
 
     @Column(name = "name")

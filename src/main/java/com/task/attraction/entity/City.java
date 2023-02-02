@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
 public class City implements Persistable<Integer> {
 
     @Id
-    @SequenceGenerator(name = "my_sequence", initialValue = 5)
+    @SequenceGenerator(name = "my_sequence", initialValue = 5, allocationSize = 5)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "my_sequence")
     private Integer id;
 

@@ -65,7 +65,7 @@ public class AttractionServiceImp implements AttractionService {
     @Transactional
     public Attraction updateDescription(Integer id, String description) {
         Attraction attraction = attractionRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Сначало добавьти город"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Сначало добавьти достопримечательность"));
         attraction.setDescription(description);
         return attraction;
     }
