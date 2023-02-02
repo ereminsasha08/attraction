@@ -3,10 +3,10 @@
 1. Клонировать репозиторий, собрать проект, запустить docker-compose  или можно просто скачать docker-compose.yaml из папки dockercompose и запуститься с него
 2. Доступные конечные точки
 #### Достопримечательности
-- GET /attraction - все достопримичательности, опционально параметры запроса typeFilter={BUILDING, CONSTRUCTION, MUSEUM,
+- GET rest/attraction - все достопримичательности, опционально параметры запроса typeFilter={BUILDING, CONSTRUCTION, MUSEUM,
  MONUMENT, RESERVE}, nameSorted={true, false}
-- GET /attraction/city/{name} - достопримичательности города
-- POST /attraction - добавления достопримечательности, тело запроса должно включать поля
+- GET rest/attraction/city/{name} - достопримичательности города
+- POST rest/attraction - добавления достопримечательности, тело запроса должно включать поля
  ```js
  {
     name: "Название достопримичательности",
@@ -16,11 +16,11 @@
     cityId: "Id города из списка доступных городов"
  }
  ```
-- PATCH /attraction/update/{id} - обновления описания достопреиечательности обязательный параметр description
-- DELETE /attraction/delete/{id} - удаления достопримечательности
+- PATCH rest/attraction/update/{id} - обновления описания достопреиечательности обязательный параметр description
+- DELETE rest/attraction/delete/{id} - удаления достопримечательности
 #### Города
-- GET /cities - список городов
-- POST /cities - добавления города, тело запроса должно включать поля
+- GET rest/cities - список городов
+- POST rest/cities - добавления города, тело запроса должно включать поля
 ```js
 {
     name: "Название города",    
@@ -29,7 +29,7 @@
     underground: "Наличие метро"
 }
 ```
-- PATCH /cities/update/{id} - обновления города, опциональные параметры population, underground
+- PATCH rest/cities/update/{id} - обновления города, опциональные параметры population, underground
 
 ### ТЗ
 
