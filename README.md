@@ -1,12 +1,13 @@
 ## Запуск и функционал
 
 1. Клонировать репозиторий, собрать проект, запустить docker-compose  или можно просто скачать docker-compose.yaml из папки dockercompose и запуститься с него
-2. Доступные конечные точки
+2. Также запустил на AWS, но не уверен что он будет доступен (у меня только через Tor запускается http://docke-loadb-413yyyuxd2kw-a2489cebf416af05.elb.eu-west-3.amazonaws.com:8080/rest/*)
+3. Доступные конечные точки
 #### Достопримечательности
-- GET rest/attraction - все достопримичательности, опционально параметры запроса typeFilter={BUILDING, CONSTRUCTION, MUSEUM,
+- GET rest/attractions - все достопримичательности, опционально параметры запроса typeFilter={BUILDING, CONSTRUCTION, MUSEUM,
  MONUMENT, RESERVE}, nameSorted={true, false}
-- GET rest/attraction/city/{name} - достопримичательности города
-- POST rest/attraction - добавления достопримечательности, тело запроса должно включать поля
+- GET rest/attractions/city/{name} - достопримичательности города
+- POST rest/attractions - добавления достопримечательности, тело запроса должно включать поля
  ```js
  {
     name: "Название достопримичательности",
@@ -16,8 +17,8 @@
     cityId: "Id города из списка доступных городов"
  }
  ```
-- PATCH rest/attraction/update/{id} - обновления описания достопреиечательности обязательный параметр description
-- DELETE rest/attraction/delete/{id} - удаления достопримечательности
+- PATCH rest/attractions/update/{id} - обновления описания достопреиечательности обязательный параметр description
+- DELETE rest/attractions/delete/{id} - удаления достопримечательности
 #### Города
 - GET rest/cities - список городов
 - POST rest/cities - добавления города, тело запроса должно включать поля
