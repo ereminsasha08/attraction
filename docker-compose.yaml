@@ -1,6 +1,6 @@
 version: '3.1'
 services:
-  db_cars:
+  db_attraction:
     image: postgres:13
     container_name: "db_attraction"
     ports:

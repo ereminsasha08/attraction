@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping(CityController.REST_URL)
 @RequiredArgsConstructor
 public class CityController {
-    public final static String REST_URL = "rest/cityes";
+    public final static String REST_URL = "rest/cities";
 
     private final CityService cityService;
 
@@ -27,7 +27,7 @@ public class CityController {
         return cityService.create(city);
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("update/{id}")
     public City update(@PathVariable Integer id,
                        @Nullable @RequestParam Integer population,
                        @Nullable @RequestParam Boolean underground) {

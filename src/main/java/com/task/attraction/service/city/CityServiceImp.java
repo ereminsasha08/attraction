@@ -49,6 +49,6 @@ public class CityServiceImp implements CityService {
     @Override
     public City findById(Integer cityId) {
         return cityRepository.findById(cityId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Сначало добавьти город"));
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Город не найден"));
     }
 }
