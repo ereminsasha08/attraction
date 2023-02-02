@@ -1,0 +1,32 @@
+version: '3.1'
+services:
+  db_attraction:
+    image: postgres:13
+    container_name: "db_attraction"
+    ports:
+      - "5432:5432"
+    networks:
+      - attraction_network
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+  attraction:
+    image: sashaeremin/attraction:latest
+    container_name: "attraction_app"
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - attraction_network
+    environment:
+      - spring.datasource.url=jdbc:postgresql://db_attraction:5432/postgres
+networks:
+  attraction_network:
+
+
+
+
+
+
+
+

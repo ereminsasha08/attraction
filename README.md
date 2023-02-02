@@ -1,8 +1,7 @@
 ## Запуск и функционал
 
-1. Собрать проект
-2. Запустить docker-compose
-3. Доступные конечные точки
+1. Клонировать репозиторий, собрать проект, запустить docker-compose  или можно просто скачать docker-compose.yaml из папки dockercompose и запуститься с него
+2. Доступные конечные точки
 #### Достопримечательности
 - GET /attraction - все достопримичательности, опционально параметры запроса typeFilter={BUILDING, CONSTRUCTION, MUSEUM,
  MONUMENT, RESERVE}, nameSorted={true, false}
